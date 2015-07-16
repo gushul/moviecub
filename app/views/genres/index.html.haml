@@ -1,0 +1,19 @@
+.page-header
+  = link_to new_genre_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Genre
+  %h1 Listing genres
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+    %tbody
+      = content_tag_for(:tr, @genres) do |genre|
+        %td= genre.name
+        %td= link_to 'Show', genre
+        %td= link_to 'Edit', edit_genre_path(genre)
+        %td= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' }
