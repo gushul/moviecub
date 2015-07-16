@@ -11,5 +11,21 @@
         - @movie.errors.full_messages.each do |msg|
           %li= msg
   .form-group
+    .col-sm-2
+      %label Film poster
+      = f.file_field :poster
+      = f.hidden_field :poster_cache
+    .col-sm-2
+      %label Movie name
+      = f.text_field :movie_name
+    .col-sm-2
+      %label Movie name
+      = f.text_field :genre
+    .col-sm-2
+      %label Movie name
+      = f.text_field :description
+
+
+  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"

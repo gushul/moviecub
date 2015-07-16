@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres
   mount Tail::Engine, at: "/tail"
   root 'movies#index'
   resources :movies
