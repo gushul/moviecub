@@ -1,0 +1,8 @@
+.row
+  - @movies.each do |movie|
+    = link_to movie do
+      .col-xs-6.col-sm-6.col-md-4.col-lg-4
+        .foto
+          = image_tag movie.poster.url(:thumb) if movie.poster.url
+        .caption
+          %h3= movie.movie_name

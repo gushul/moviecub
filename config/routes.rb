@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :users
   devise_for :users, controllers: { registrations: "users/registrations"  }
   resources :genres
   mount Tail::Engine, at: "/tail"
-  root 'movies#index'
+  root 'welcome#index'
   resources :movies
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
