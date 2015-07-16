@@ -11,21 +11,22 @@
         - @movie.errors.full_messages.each do |msg|
           %li= msg
   .form-group
-    .col-sm-2
+    .col-md-6.col-md-offset-3
+      %label Movie name
+      = f.text_field :movie_name
+    .col-md-6.col-md-offset-3
+      %label Genre
+      = f.text_field :genre
+    .col-md-6.col-md-offset-3
+      %label Released year
+      = f.select :year_released, (Time.zone.now.year - 100)..(Time.zone.now.year + 1)
+    .col-md-6.col-md-offset-3
+      %label description
+      = f.text_area :description
+    .col-md-6.col-md-offset-3
       %label Film poster
       = f.file_field :poster
       = f.hidden_field :poster_cache
-    .col-sm-2
-      %label Movie name
-      = f.text_field :movie_name
-    .col-sm-2
-      %label Movie name
-      = f.text_field :genre
-    .col-sm-2
-      %label Movie name
-      = f.text_field :description
-
-
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"

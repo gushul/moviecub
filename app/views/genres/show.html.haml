@@ -1,0 +1,11 @@
+.page-header
+  = link_to genres_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_genre_path(@genre), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show genre
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @genre.name

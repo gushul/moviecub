@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"  }
   resources :genres
   mount Tail::Engine, at: "/tail"
   root 'movies#index'

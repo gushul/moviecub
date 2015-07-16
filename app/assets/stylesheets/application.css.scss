@@ -17,3 +17,15 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+}
