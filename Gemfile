@@ -16,6 +16,7 @@ gem 'bootstrap-generators', '~> 3.3.4'
 gem 'slim'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'carrierwave'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
