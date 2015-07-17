@@ -1,17 +1,12 @@
 .page-header
-  = link_to new_movie_path, class: 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    New Movie
   %h1 Listing movies
-.table-responsive
-  %table.table.table-striped.table-bordered.table-hover
-    %thead
-      %tr
-        %th
-        %th
-        %th
-    %tbody
-      = content_tag_for(:tr, @movies) do |movie|
-        %td= link_to 'Show', movie
-        %td= link_to 'Edit', edit_movie_path(movie)
-        %td= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }
+.row
+  - @movies.each do |movie|
+    = link_to movie do
+      .col-xs-6.col-sm-6.col-md-4.col-lg-4
+        .foto
+          = image_tag movie.poster.url(:thumb) if movie.poster.url
+        .caption
+          %h3= movie.movie_name
+          %h3= link_to 'Edit', edit_movie_path(movie)
+          %h3= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }
