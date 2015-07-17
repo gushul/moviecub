@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :users, controllers: { registrations: "users/registrations"  }
+  devise_for :users, controllers: { registrations: "user/registrations"  }
   resources :genres
   mount Tail::Engine, at: "/tail"
   root 'welcome#index'
